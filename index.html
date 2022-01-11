@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bell Warisara</title>
+        <link rel="shortcut icon" href="https://yt3.ggpht.com/OGe1GEraWYl3m7ezOLGM_R1HXfDMoOmzHT_OnrWHFkmr0g0iyUEdnVIYu8VXyYtJ19aJPDwZdAs" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <style type="text/css">
+            html,body {
+              margin: 0;
+              padding: 0;
+              font-family: 'Cookie', cursive;
+              align-content: center;
+              text-align: center;
+              background: repeating-conic-gradient(from 45deg, #ff59ac 0% 25%, transparent 0% 50%) 0 2em, conic-gradient(#f768b0 135deg, #f792c5 0% 225deg, #f571b3 0%);
+              background-size: 4em 4em;
+              /*background-image: url(https://yt3.ggpht.com/w54CcQp6UWr88HKADYE1Hhn228UDsapDX8YdmjjNQVdFl9WhG_zuEd5GtR2jsvlwvKRzO9HW);*/
+              /*background-position: center;*/
+              /*background-repeat: no-repeat;*/
+              /*background-size: cover;*/
+              /*background-color: black;*/
+            }
+            h1 {
+                color: #ff59ac;
+                background-color: rgba(255, 255, 255, 1);
+                background-blend-mode: multiply;
+                /*margin-left: 500px;*/
+                /*margin-right: 500px;*/
+                font-size: 60px;
+                margin-block-start: 0.2em;
+                margin-block-end: 0.1em;
+            }
+            h1:hover {
+                color: #FF0000;
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+            h2 {
+                color: rgb(255, 29, 244);
+                font-size: 40px;
+                margin-block-start: 0.2em;
+                margin-block-end: 0.1em;
+                background-color: rgba(255, 255, 255, 1);
+                background-blend-mode: multiply;
+            }
+            h2:hover {
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+            img {
+              height: 77vh;
+              width: auto;
+            }
+            div {
+                margin: -10;
+                padding: -10;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+    </style>
+    </head>
+    
+    <body>
+        <h1><a href="https://www.youtube.com/channel/UCM1pNVcv4A3T8K228w-Kvig/videos"><i>Bell Warisara</i></a></h1>
+    <div id="slideshow"></div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+    const req = new XMLHttpRequest();
+    req.open("GET",'../data.json', true);
+    req.send();
+    console.log(req.responseText)
+    req.onload=function(){
+      let json = JSON.parse(req.responseText);
+      let html = ``
+      // Add your code below this line
+    //   json = json.filter(function(val) {
+    //  return (val.hidden === false) && (parseInt(val.numberOfMissions) % 6 === 0);
+    //   });
+    //   json = json.reverse();
+    // document.write("<div id=\"slideshow\">")
+
+
+       json.forEach(function(val) {
+        //  html += "<a href='" + val.intel + "' target=\"_blank\" title=\\"+ val.title + "\">"
+        //  html += "<img src = '" + val.imageLink + "' " + "alt='" + val.title + "'>"
+        //  html += "</a>"
+        html += "<a href=\"https://www.youtube.com/watch?v=" + val.vid + "\" target=\"_blank\"><img src=\"https://img.youtube.com/vi/" + val.vid + "/maxresdefault.jpg\" alt=\"" + val.title + "\" title=\"" + val.title + "\"/><br><h2>"+val.title+"</h2></a>"
+        // html += "<img src=\"https://img.youtube.com/vi/" + val.vid + "/maxresdefault.jpg\"/>"
+        // document.write("<a href=\"https://www.youtube.com/watch?v=" + val.vid + "\" target=\"_blank\"><img src=\"https://img.youtube.com/vi/" + val.vid + "/maxresdefault.jpg\" alt=\"" + val.title + "\" /></a>");
+       });
+    //    document.write("</div>")
+    // document.getElementsByClassName('slideshow')[0].innerHTML = html;
+    document.getElementById("slideshow").innerHTML = html;
+    // }
+    // }
+    }
+</script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/pamelafox/ka-slideshow-example@master/slideshow.js"></script> -->
+    
+    </body>
+</html>
+<!-- https://www.khanacademy.org/computing/computer-programming/html-css-js/using-js-libraries-in-your-webpage/pt/using-a-js-library-slideshow-library -->
