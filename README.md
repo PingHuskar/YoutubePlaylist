@@ -13,3 +13,5 @@ https://www.khanacademy.org/computing/computer-programming/html-css-js#using-js-
 ### D3
 #### Learn
 [freeCodeCamp](https://www.freecodecamp.org/learn/data-visualization/)
+## YouTube Thumbnail
+[How to Download a YouTube Thumbnail](https://vidiq.com/blog/post/how-to-download-youtube-thumbnail)
